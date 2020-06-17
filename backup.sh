@@ -33,7 +33,7 @@ do
     echo "${line}"        >  "${DST}/${BACKUP_HASH}.src"
     echo "${BACKUP_FILE}" >> "${DST}/${BACKUP_HASH}.history"
 
-    XZ_OPT="-9e -T0" tar -C / --listed-incremental=$DST/${BACKUP_SNAR} --lzma -cf "$DST/${BACKUP_FILE}" "$line"
+    XZ_OPT="-9e -T2" tar -C / --listed-incremental=$DST/${BACKUP_SNAR} --lzma -cf "$DST/${BACKUP_FILE}" "$line"
     let COUNT=$COUNT+1
   fi
 done < "${WORKDIR}/filenames"
