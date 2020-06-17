@@ -10,7 +10,7 @@ A simplistic backup tool using tar balls. No encryption of any kind is supported
 
 Copy the contents of this script into the directory where you want your backup to be stored.
 
-Edit `filenames` to manually list all files you want to include in the backup.
+Edit `filenames` to manually list all files you want to include in the backup. Empty lines and lines starting with `#` will be ignored.
 
 Run `make full` to remove all previous backued up files and create a new full backup.
 
