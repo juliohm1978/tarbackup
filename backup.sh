@@ -20,7 +20,7 @@ WORKDIR=$(pwd)
 
 mkdir -p "$DST"
 echo "📂 Destination: $DST"
-while IFS= read -r line
+while read line || [ -n "$line" ]; do
 do
   if [[ "$line" != "" && $line != \#* ]]; then
     echo "---"
