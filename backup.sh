@@ -38,5 +38,5 @@ while read line || [ -n "$line" ]; do
 done < "${WORKDIR}/filenames"
 
 echo ---
-echo Incremental backup added: $(du -ach *private/${TIMESTAMP_ATUAL}* | grep 'total')
+echo Incremental backup added: $(du -ach private/*${TIMESTAMP_ATUAL}* | grep 'total')
 echo OK
