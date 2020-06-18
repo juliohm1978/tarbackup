@@ -16,6 +16,8 @@ Run `make full` to remove all previous backued up files and create a new full ba
 
 Run `make` to create an incremental backup. Only modified/created files since the last backup will be included.
 
+Run `make restore` to restore the backup.
+
 Backup files will be created in the `private` directory.
 
 A file called `backup.log` will be created in every run, showing which source directories and hash associations.
