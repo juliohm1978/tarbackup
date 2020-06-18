@@ -22,7 +22,7 @@ mkdir -p "$DST"
 echo "📂 Destination: $DST"
 while read line || [ -n "$line" ]; do
   if [[ "$line" != "" && $line != \#* ]]; then
-    echo "---"
+    echo ---
     BACKUP_HASH=$(echo "$line" | md5sum - | awk '{print $1}')
     BACKUP_FILE="${BACKUP_HASH}.${TIMESTAMP_ATUAL}.${COUNT}.tgz"
     BACKUP_SNAR="${BACKUP_HASH}.snar"
@@ -37,4 +37,6 @@ while read line || [ -n "$line" ]; do
   fi
 done < "${WORKDIR}/filenames"
 
+echo ---
+echo Incremental backup added: $(du -ach *private/${TIMESTAMP_ATUAL}* | grep 'total')
 echo OK
