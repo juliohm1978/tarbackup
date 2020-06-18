@@ -25,7 +25,7 @@ do
   if [[ "$line" != "" && $line != \#* ]]; then
     echo "---"
     BACKUP_HASH=$(echo "$line" | md5sum - | awk '{print $1}')
-    BACKUP_FILE="${BACKUP_HASH}.${TIMESTAMP_ATUAL}.${COUNT}.tar.xz"
+    BACKUP_FILE="${BACKUP_HASH}.${TIMESTAMP_ATUAL}.${COUNT}.tgz"
     BACKUP_SNAR="${BACKUP_HASH}.snar"
     echo "📂 /${line}"
     echo "🤪 ${BACKUP_SNAR}"
@@ -33,7 +33,7 @@ do
     echo "${line}"        >  "${DST}/${BACKUP_HASH}.src"
     echo "${BACKUP_FILE}" >> "${DST}/${BACKUP_HASH}.history"
 
-    XZ_OPT="-9e -T2" tar -C / --listed-incremental=$DST/${BACKUP_SNAR} --lzma -cf "$DST/${BACKUP_FILE}" "$line"
+    tar -C / --listed-incremental=$DST/${BACKUP_SNAR} -czf "$DST/${BACKUP_FILE}" "$line"
     let COUNT=$COUNT+1
   fi
 done < "${WORKDIR}/filenames"
