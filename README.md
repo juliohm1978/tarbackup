@@ -4,7 +4,7 @@ A simplistic backup tool using tar balls. No encryption of any kind is supported
 
 ## TODO
 
-* Restore script
+* Remove empty last line limitation
 
 ## How to use
 
@@ -19,3 +19,7 @@ Run `make` to create an incremental backup. Only modified/created files since th
 Backup files will be created in the `private` directory.
 
 A file called `backup.log` will be created in every run, showing which source directories and hash associations.
+
+## Limitations
+
+* Remember to add a blank line at the end of `filenames`. If not, the last item will not be backed up.
