@@ -21,7 +21,6 @@ WORKDIR=$(pwd)
 mkdir -p "$DST"
 echo "📂 Destination: $DST"
 while read line || [ -n "$line" ]; do
-do
   if [[ "$line" != "" && $line != \#* ]]; then
     echo "---"
     BACKUP_HASH=$(echo "$line" | md5sum - | awk '{print $1}')
