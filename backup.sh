@@ -37,3 +37,5 @@ do
     let COUNT=$COUNT+1
   fi
 done < "${WORKDIR}/filenames"
+
+echo OK
