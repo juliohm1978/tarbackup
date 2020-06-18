@@ -10,7 +10,7 @@ Copy the contents of this script into the directory where you want your backup t
 
 Edit `filenames` to manually list all files you want to include in the backup. Empty lines and lines starting with `#` are ignored.
 
-All backed up and restored files are always relative to the root directory `/`. Therefore, all leading `/` characters are ignored.
+All backed up and restored files are always relative to the root directory `/`. Therefore, missing leading `/` characters will be automatically added.
 
 ### Create a backup
 Use the default and `full` targets to create a backup.
