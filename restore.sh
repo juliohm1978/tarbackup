@@ -4,6 +4,7 @@ RESTORE_DIR="$1"
 
 echo "---"
 echo RESTORE_DIR=$RESTORE_DIR
+date
 echo "---"
 cd private
 for HASH_HISTORYFILE in $(ls *.history); do
@@ -17,4 +18,5 @@ for HASH_HISTORYFILE in $(ls *.history); do
 done
 
 echo "---"
+date
 echo OK
