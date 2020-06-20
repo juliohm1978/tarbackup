@@ -4,6 +4,8 @@
 DST="$1"
 TYPE="$2"
 
+date
+
 if [[ "$DST" == "" || "$DST" == "/" ]]; then
   echo "ERROR Invalid DST=$DST"
   exit 1
@@ -40,4 +42,5 @@ done < "${WORKDIR}/filenames"
 echo ---
 echo Total size: $(du -ach private/ | grep 'total' | awk '{print $1}')
 echo Added size: $(du -ach private/*${TIMESTAMP_ATUAL}* | grep 'total' | awk '{print $1}')
+date
 echo OK
